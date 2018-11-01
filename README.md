@@ -1,6 +1,6 @@
-# isSueSnow60.com
+# isLulu30.com
 
-A website to celebrate 60 years of mum on 13-07-2018.
+A website to celebrate 30 years of Lulu on 02-11-2018.
 
 # Pre-Requisites
 
