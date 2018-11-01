@@ -1,0 +1,51 @@
+{
+  "name": "islulu30.com",
+  "version": "1.0.0",
+  "description": "A website celebrating 30 years of lulu.",
+  "main": "index.js",
+  "author": "Darryl Snow",
+  "homepage": "https://islulu30.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darryl-snow/islulu30.com.git"
+  },
+  "config": {
+    "title": "Is Lulu 30?"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn run dev:compile:html | yarn run dev:compile:css | yarn run dev:compile:img | yarn run dev:compile:js",
+    "dev:compile:html": "pug ./src/index.pug -o ./docs -O ./package.json -w -P",
+    "dev:compile:css": "stylus ./src/css/index.styl -o ./docs -l -w",
+    "dev:compile:js": "webpack",
+    "dev:compile:img": "imagemin ./src/img/* -o ./docs/img && cp ./src/img/browserconfig.xml ./docs/img/ && cp ./src/img/favicon.ico ./docs/img/ && cp ./src/img/safari-pinned-tab.svg ./docs/img/ && cp ./src/img/site.webmanifest ./docs/img/",
+    "build": "yarn run prod:compile:html | yarn run prod:compile:css | yarn run prod:compile:img | yarn run prod:compile:js",
+    "prod:compile:html": "pug ./src/index.pug -o ./docs -O ./package.json",
+    "prod:compile:css": "stylus ./src/css/index.styl -o ./docs -c",
+    "prod:compile:js": "webpack",
+    "prod:compile:img": "imagemin ./src/img/* -o ./docs/img && cp ./src/img/browserconfig.xml ./docs/img/ && cp ./src/img/favicon.ico ./docs/img/ && cp ./src/img/safari-pinned-tab.svg ./docs/img/ && cp ./src/img/site.webmanifest ./docs/img/",
+    "server": "cd ./docs && python -m SimpleHTTPServer 8000"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.4.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "html-minifier": "^3.5.16",
+    "imagemin-cli": "^3.0.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "stylus": "^0.54.5",
+    "uglify-js": "^3.4.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "modern-normalize": "^0.5.0"
+  }
+}

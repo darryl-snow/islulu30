@@ -1,0 +1,37 @@
+.c-love-from
+  background white
+  text-align center
+
+  &-heading
+    color to-celebrate-color
+    font-family font-family--serif
+    font-size 2em
+    margin 0 0 1em 0
+
+  &-people
+    display grid
+    grid-template-columns 100%
+    grid-gap 0
+    position relative
+
+  &-person
+    background-position 50% 50%
+    background-repeat no-repeat
+    background-size cover
+    height 50vh
+
+    &--Darryl
+      background-image url(img/darryl.jpg)
+
+    &--Grace
+      background-image url(img/grace.jpg)
+
+  &-ampersand
+    color to-celebrate-color
+    font-family font-family--serif
+    font-size 8em
+    position absolute
+    left 50%
+    mix-blend-mode multiply
+    top 50%
+    transform translateX(-50%) translateY(-50%)
